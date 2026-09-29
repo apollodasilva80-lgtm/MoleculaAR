@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Projeto educacional de realidade virtual aplicado ao ensino de química, moléculas e acessibilidade.">
+
+    <title>Molécula VR | Química em Realidade Virtual</title>
+
+    <!-- BOOTSTRAP -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- CSS DO PROJETO -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#inicio">
+
+            <span class="logo-icon">
+                <i class="bi bi-bezier2"></i>
+            </span>
+
+            <span class="logo-text">
+                MOLÉCULA<span>VR</span>
+            </span>
+
+        </a>
+
+
+        <!-- Botão mobile -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- Menu -->
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">
+                        Início
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projeto">
+                        O Projeto
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#quimica">
+                        Química
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#acessibilidade">
+                        Acessibilidade
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#oculos">
+                        Tecnologia
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#equipe">
+                        Equipe
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#testers">
+                        Testers
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+
+                    <!--
+                        COLOQUE O LINK DE CONTATO AQUI
+                        Exemplo:
+                        href="https://instagram.com/..."
+                    -->
+
+                    <a
+                        class="btn btn-contato"
+                        href="#"
+                        target="_blank"
+                    >
+
+                        <i class="bi bi-chat-dots"></i>
+
+                        Contato
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HERO / INÍCIO -->
+
+<section id="inicio" class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-100">
+
+
+            <!-- TEXTO -->
+
+            <div class="col-lg-6 hero-content">
+
+                <div class="hero-tag">
+
+                    <i class="bi bi-stars"></i>
+
+                    INOVAÇÃO • EDUCAÇÃO • ACESSIBILIDADE
+
+                </div>
+
+
+                <h1>
+
+                    A química ganhou uma
+
+                    <span>nova dimensão.</span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Uma experiência educacional em realidade virtual
+                    que transforma moléculas e elementos químicos em
+                    experiências interativas, tornando o aprendizado
+                    mais visual, imersivo e acessível.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#projeto"
+                        class="btn btn-primary-custom"
+                    >
+
+                        Conheça o projeto
+
+                        <i class="bi bi-arrow-down"></i>
+
+                    </a>
+
+
+                    <a
+                        href="#oculos"
+                        class="btn btn-outline-custom"
+                    >
+
+                        <i class="bi bi-box"></i>
+
+                        Conheça a tecnologia
+
+                    </a>
+
+                </div>
+
+
+                <!-- Pequenas informações -->
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+
+                        <strong>3D</strong>
+
+                        <span>Moléculas<br>interativas</span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>VR</strong>
+
+                        <span>Experiência<br>imersiva</span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>PCD</strong>
+
+                        <span>Educação<br>acessível</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MOLÉCULAS 3D-->
+
+            <div class="col-lg-6">
+
+                <div class="molecule-container">
+
+                    <!--
+                        O Three.js será utilizado aqui.
+
+                        O JavaScript criará moléculas 3D
+                        automaticamente.
+                    -->
+
+                    <div
+                        id="molecule-canvas"
+                        class="molecule-canvas"
+                    ></div>
+
+
+                    <div class="molecule-label">
+
+                        <span class="pulse"></span>
+
+                        SIMULAÇÃO MOLECULAR 3D
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Elemento decorativo -->
+
+    <div class="hero-grid"></div>
+
+</section>
+
+
+
+<!-- PROJETO-->
+
+<section id="projeto" class="section projeto-section">
+
+    <div class="container">
+
+
+        <!-- TÍTULO -->
+
+        <div class="section-header text-center">
+
+            <span class="section-tag">
+                O PROJETO
+            </span>
+
+            <h2>
+                Transformando a maneira de
+                <span>aprender química</span>
+            </h2>
+
+            <p>
+
+                Nosso projeto une tecnologia, ciência e educação
+                para criar uma nova experiência de aprendizagem.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row align-items-center mt-5">
+
+
+            <!-- TEXTO -->
+
+            <div class="col-lg-6">
+
+                <div class="content-box">
+
+                    <div class="icon-box">
+
+                        <i class="bi bi-lightbulb"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Uma nova forma de experimentar a química
+                    </h3>
+
+
+                    <p>
+
+                        O projeto consiste no desenvolvimento de um
+                        software voltado para óculos de realidade
+                        virtual, permitindo que estudantes explorem
+                        moléculas e elementos químicos em um ambiente
+                        tridimensional.
+
+                    </p>
+
+
+                    <p>
+
+                        Em vez de apenas observar representações
+                        bidimensionais em livros ou telas, o estudante
+                        pode visualizar estruturas moleculares em 3D
+                        e interagir com elas.
+
+                    </p>
+
+
+                    <p>
+
+                        A proposta é aproximar conceitos abstratos da
+                        realidade do aluno através de uma experiência
+                        visual, interativa e imersiva.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARDS -->
+
+            <div class="col-lg-6">
+
+                <div class="project-features">
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-boxes"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Moléculas em 3D
+                            </h4>
+
+                            <p>
+                                Visualização tridimensional de
+                                estruturas químicas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-hand-index-thumb"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Interatividade
+                            </h4>
+
+                            <p>
+                                Exploração dos elementos através
+                                de uma experiência imersiva.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-mortarboard"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Educação
+                            </h4>
+
+                            <p>
+                                Aproxima conceitos científicos
+                                da experiência do estudante.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+
+                            <i class="bi bi-universal-access"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Acessibilidade
+                            </h4>
+
+                            <p>
+                                Pensado para diferentes formas
+                                de aprendizagem e interação.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- QUÍMICA NA EDUCAÇÃO -->
+
+<section id="quimica" class="section chemistry-section">
+
+    <div class="container">
+
+
+        <div class="row align-items-center">
+
+
+            <!-- TEXTO -->
+
+            <div class="col-lg-6">
+
+                <span class="section-tag">
+                    CIÊNCIA & EDUCAÇÃO
+                </span>
+
+
+                <h2>
+
+                    Por que a
+
+                    <span>química</span>
+
+                    é tão importante?
+
+                </h2>
+
+
+                <p class="large-text">
+
+                    A química está presente em praticamente tudo
+                    ao nosso redor.
+
+                </p>
+
+
+                <p>
+
+                    Desde os alimentos que consumimos até os
+                    medicamentos, materiais, combustíveis,
+                    tecnologias e processos que fazem parte da
+                    nossa vida cotidiana.
+
+                </p>
+
+
+                <p>
+
+                    Compreender a química ajuda os estudantes a
+                    entenderem melhor o mundo e desenvolverem
+                    habilidades de investigação, raciocínio lógico
+                    e resolução de problemas.
+
+                </p>
+
+
+                <div class="chemistry-highlight">
+
+                    <i class="bi bi-atom"></i>
+
+                    <div>
+
+                        <strong>
+                            Aprender fazendo
+                        </strong>
+
+                        <p>
+                            A tecnologia pode transformar conceitos
+                            abstratos em experiências que o aluno
+                            consegue visualizar e explorar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ELEMENTOS QUÍMICOS -->
+
+            <div class="col-lg-6">
+
+                <div class="periodic-visual">
+
+
+                    <div class="element-card element-h">
+
+                        <small>1</small>
+
+                        <strong>H</strong>
+
+                        <span>Hidrogênio</span>
+
+                    </div>
+
+
+                    <div class="element-card element-o">
+
+                        <small>8</small>
+
+                        <strong>O</strong>
+
+                        <span>Oxigênio</span>
+
+                    </div>
+
+
+                    <div class="element-card element-c">
+
+                        <small>6</small>
+
+                        <strong>C</strong>
+
+                        <span>Carbono</span>
+
+                    </div>
+
+
+                    <div class="element-card element-n">
+
+                        <small>7</small>
+
+                        <strong>N</strong>
+
+                        <span>Nitrogênio</span>
+
+                    </div>
+
+
+                    <div class="atomic-center">
+
+                        <i class="bi bi-atom"></i>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ACESSIBILIDADE -->
+
+<section id="acessibilidade" class="section accessibility-section">
+
+    <div class="container">
+
+
+        <div class="section-header text-center">
+
+            <span class="section-tag">
+                ACESSIBILIDADE
+            </span>
+
+            <h2>
+
+                Tecnologia para
+
+                <span>todos aprenderem</span>
+
+            </h2>
+
+
+            <p>
+
+                A educação precisa considerar diferentes formas
+                de aprender, interagir e compreender o mundo.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4 mt-4">
+
+
+            <!-- NEURODIVERGÊNCIA -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="access-card">
+
+                    <div class="access-icon">
+
+                        <i class="bi bi-brain"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Neurodivergência
+                    </h3>
+
+
+                    <p>
+
+                        Recursos visuais e experiências interativas
+                        podem oferecer novas formas de apresentar
+                        conceitos científicos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DEFICIÊNCIA FÍSICA -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="access-card">
+
+                    <div class="access-icon">
+
+                        <i class="bi bi-universal-access-circle"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Deficiências físicas
+                    </h3>
+
+
+                    <p>
+
+                        O projeto busca considerar diferentes formas
+                        de interação e possibilidades de uso da
+                        tecnologia.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- APRENDIZADO VISUAL -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="access-card">
+
+                    <div class="access-icon">
+
+                        <i class="bi bi-eye"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Aprendizado visual
+                    </h3>
+
+
+                    <p>
+
+                        Estruturas químicas podem ser visualizadas
+                        em três dimensões, facilitando a compreensão
+                        de conceitos abstratos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EXPERIÊNCIA -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="access-card">
+
+                    <div class="access-icon">
+
+                        <i class="bi bi-stars"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Experiência imersiva
+                    </h3>
+
+
+                    <p>
+
+                        A realidade virtual cria um ambiente onde
+                        o estudante pode explorar os conteúdos de
+                        maneira diferente.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- BENEFÍCIOS NA EDUCAÇÃO-->
+
+<section class="section benefits-section">
+
+    <div class="container">
+
+
+        <div class="row align-items-center">
+
+
+            <div class="col-lg-5">
+
+                <span class="section-tag">
+                    IMPACTO
+                </span>
+
+
+                <h2>
+
+                    Mais do que
+
+                    <span>tecnologia.</span>
+
+                </h2>
+
+
+                <p>
+
+                    A realidade virtual pode ser utilizada como
+                    uma ferramenta para complementar o ensino
+                    tradicional e proporcionar novas experiências
+                    de aprendizagem.
+
+                </p>
+
+
+                <p>
+
+                    Nosso objetivo é fazer com que a tecnologia
+                    esteja a serviço da educação.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="col-lg-7">
+
+
+                <div class="benefit-list">
+
+
+                    <div class="benefit-item">
+
+                        <span class="benefit-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Maior compreensão
+                            </h3>
+
+                            <p>
+                                Representações 3D ajudam a visualizar
+                                estruturas e relações espaciais.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="benefit-item">
+
+                        <span class="benefit-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Aprendizado interativo
+                            </h3>
+
+                            <p>
+                                O estudante deixa de ser apenas
+                                espectador e passa a explorar.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="benefit-item">
+
+                        <span class="benefit-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Desenvolvimento
+                            </h3>
+
+                            <p>
+                                A experiência pode estimular
+                                curiosidade, investigação e
+                                resolução de problemas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="benefit-item">
+
+                        <span class="benefit-number">
+                            04
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Inclusão
+                            </h3>
+
+                            <p>
+                                O projeto busca considerar diferentes
+                                necessidades durante o processo
+                                educacional.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ÓCULOS DE REALIDADE VIRTUAL-->
+
+<!-- ÓCULOS DE REALIDADE VIRTUAL -->
+
+<section id="oculos" class="section vr-section">
+
+    <div class="container">
+
+        <div class="section-header text-center">
+
+            <span class="section-tag">
+                TECNOLOGIA
+            </span>
+
+            <h2>
+                Por dentro da
+                <span>realidade virtual</span>
+            </h2>
+
+            <p>
+                Conheça alguns dos principais componentes
+                presentes em um óculos de realidade virtual.
+            </p>
+
+        </div>
+
+
+        <div class="row align-items-center mt-5">
+
+            <!-- IMAGEM DO ÓCULOS -->
+
+            <div class="col-lg-7">
+
+                <div class="vr-diagram">
+
+                    <img
+                        src="img/oculos de realidade virtual.jpg"
+                        alt="Óculos de realidade virtual desmontado mostrando seus componentes"
+                        class="vr-image"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="col-lg-5">
+
+                <div class="vr-info">
+
+                    <div class="vr-info-item">
+
+                        <span>01</span>
+
+                        <div>
+
+                            <h3>Visualização</h3>
+
+                            <p>
+                                As lentes apresentam as imagens
+                                renderizadas de maneira independente
+                                para cada olho, criando a percepção
+                                de profundidade.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="vr-info-item">
+
+                        <span>02</span>
+
+                        <div>
+
+                            <h3>Rastreamento</h3>
+
+                            <p>
+                                Sensores permitem acompanhar os
+                                movimentos do usuário dentro da
+                                experiência virtual.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="vr-info-item">
+
+                        <span>03</span>
+
+                        <div>
+
+                            <h3>Processamento</h3>
+
+                            <p>
+                                O hardware executa os cálculos
+                                necessários para renderizar o
+                                ambiente virtual.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="vr-info-item">
+
+                        <span>04</span>
+
+                        <div>
+
+                            <h3>Interação</h3>
+
+                            <p>
+                                Os sistemas de controle permitem
+                                que o usuário interaja com o
+                                ambiente virtual.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COMO FUNCIONA-->
+
+<section class="section how-section">
+
+    <div class="container">
+
+
+        <div class="section-header text-center">
+
+            <span class="section-tag">
+                COMO FUNCIONA
+            </span>
+
+
+            <h2>
+
+                Da molécula para a
+
+                <span>realidade virtual</span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="row g-4 mt-4">
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <i class="bi bi-search"></i>
+
+                    <h3>
+                        Escolha
+                    </h3>
+
+                    <p>
+                        O estudante seleciona o elemento ou
+                        molécula que deseja explorar.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <i class="bi bi-boxes"></i>
+
+                    <h3>
+                        Construção
+                    </h3>
+
+                    <p>
+                        Os elementos podem ser combinados para
+                        formar estruturas químicas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <i class="bi bi-vr"></i>
+
+                    <h3>
+                        Imersão
+                    </h3>
+
+                    <p>
+                        A molécula é apresentada dentro do
+                        ambiente tridimensional.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+                    <i class="bi bi-lightbulb"></i>
+
+                    <h3>
+                        Aprendizado
+                    </h3>
+
+                    <p>
+                        O estudante observa, experimenta e
+                        compreende os conceitos químicos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- EQUIPE -->
+
+<section id="equipe" class="section team-section">
+
+    <div class="container">
+
+
+        <div class="section-header text-center">
+
+            <span class="section-tag">
+                NOSSA EQUIPE
+            </span>
+
+
+            <h2>
+
+                Quem está por trás do
+
+                <span>projeto?</span>
+
+            </h2>
+
+
+            <p>
+
+                Conheça as pessoas responsáveis pelo
+                desenvolvimento desta iniciativa.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4 mt-4">
+
+
+            <!-- MEMBRO 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="team-card">
+
+
+                    <div class="member-photo">
+
+                        <!-- COLOQUE A FOTO DO MEMBRO AQUI.-->
+
+                        <i class="bi bi-person"></i>
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <!-- ALTERE O NOME -->
+
+                        <h3>
+                            Nome do Membro
+                        </h3>
+
+
+                        <!-- ALTERE A FUNÇÃO -->
+
+                        <span class="member-role">
+                            Função no projeto
+                        </span>
+
+
+                        <!-- ALTERE A DESCRIÇÃO -->
+
+                        <p>
+
+                            Descreva aqui a função do membro,
+                            suas responsabilidades e sua
+                            contribuição para o projeto.
+
+                        </p>
+
+
+                        <div class="member-social">
+
+                            <a href="#" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+
+                            <a href="#" aria-label="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MEMBRO 2-->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="team-card">
+
+
+                    <div class="member-photo">
+
+                        <i class="bi bi-person"></i>
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <h3>
+                            Nome do Membro
+                        </h3>
+
+
+                        <span class="member-role">
+                            Função no projeto
+                        </span>
+
+
+                        <p>
+
+                            Descreva aqui a função do membro,
+                            suas responsabilidades e sua
+                            contribuição para o projeto.
+
+                        </p>
+
+
+                        <div class="member-social">
+
+                            <a href="#" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+
+                            <a href="#" aria-label="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MEMBRO 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="team-card">
+
+
+                    <div class="member-photo">
+
+                        <i class="bi bi-person"></i>
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <h3>
+                            Nome do Membro
+                        </h3>
+
+
+                        <span class="member-role">
+                            Função no projeto
+                        </span>
+
+
+                        <p>
+
+                            Descreva aqui a função do membro,
+                            suas responsabilidades e sua
+                            contribuição para o projeto.
+
+                        </p>
+
+
+                        <div class="member-social">
+
+                            <a href="#" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+
+                            <a href="#" aria-label="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!--
+
+                PARA ADICIONAR MAIS MEMBROS:
+
+                Copie um dos blocos:
+
+                <div class="col-md-6 col-lg-4">
+                    ...
+                </div>
+
+            -->
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- TESTERS -->
+
+<section id="testers" class="section team-section">
+
+    <div class="container">
+
+        <div class="section-header text-center">
+            <span class="section-tag">TESTERS</span>
+            <h2>Quem testa o <span>projeto?</span></h2>
+            <p>Conheça as pessoas que testam a experiência.</p>
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <!-- TESTER 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-card">
+                    <div class="member-photo">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nome do Tester</h3>
+                        <span class="member-role">Tester</span>
+                        <p>Descrição da participação.</p>
+                        <div class="member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTER 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-card">
+                    <div class="member-photo">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nome do Tester</h3>
+                        <span class="member-role">Tester</span>
+                        <p>Descrição da participação.</p>
+                        <div class="member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTER 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="team-card">
+                    <div class="member-photo">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nome do Tester</h3>
+                        <span class="member-role">Tester</span>
+                        <p>Descrição da participação.</p>
+                        <div class="member-social">
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTATO -->
+
+<section class="contact-section">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+
+            <div>
+
+                <span class="section-tag">
+                    QUER SABER MAIS?
+                </span>
+
+
+                <h2>
+
+                    Faça parte dessa
+
+                    <span>nova experiência.</span>
+
+                </h2>
+
+
+                <p>
+
+                    Entre em contato com nossa equipe para
+                    conhecer melhor o projeto.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- LINK DE CONTATO -->
+            
+
+            <a
+                href="#"
+                target="_blank"
+                class="btn btn-contact-large"
+            >
+
+                Entrar em contato
+
+                <i class="bi bi-arrow-up-right"></i>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container">
+
+
+        <div class="row">
+
+
+            <div class="col-lg-5">
+
+
+                <div class="footer-brand">
+
+                    <i class="bi bi-bezier2"></i>
+
+                    MOLÉCULA<span>VR</span>
+
+                </div>
+
+
+                <p>
+
+                    Tecnologia, química e educação para
+                    construir novas formas de aprender.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="col-lg-3">
+
+                <h4>
+                    Navegação
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        <a href="#inicio">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projeto">
+                            O Projeto
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#quimica">
+                            Química
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#acessibilidade">
+                            Acessibilidade
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="col-lg-4">
+
+                <h4>
+                    Projeto
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        <a href="#oculos">
+                            Tecnologia VR
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#equipe">
+                            Nossa equipe
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#testers">
+                            Testers
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Molécula VR
+            </span>
+
+
+            <span>
+                Projeto educacional de química
+            </span>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- THREE.JS-->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+</script>
+
+
+
+<!-- BOOTSTRAP JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="script.js"></script>
+
+
+
+<!-- MOLÉCULA 3D -->
+
+
+
+
+</body>
+</html>
