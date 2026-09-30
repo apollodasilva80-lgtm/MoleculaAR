@@ -110,7 +110,8 @@
         x,
         y,
         z,
-        radius = 0.35
+        radius = 0.35,
+        color = 0xffffff
 
     ) {
 
@@ -134,7 +135,8 @@
 
             emissive: 0x061b35,
 
-            emissiveIntensity: 0.5
+            emissiveIntensity: 0.5,
+            color: color // ALTERADO: aplica a cor definida para cada átomo.
 
         });
 
@@ -167,76 +169,14 @@
 
 
     /* ÁTOMOS */
+// ALTERADO: molécula de metano (CH₄) — carbono central + quatro hidrogênios.
+const atomCenter = createAtom(0,0,0,0.65,0x303030);
+const atom1 = createAtom(-1.15,0.75,0,0.38,0xffffff);
+const atom2 = createAtom(1.15,0.75,0,0.38,0xffffff);
+const atom3 = createAtom(-0.85,-0.8,0.7,0.38,0xffffff);
+const atom4 = createAtom(0.85,-0.8,-0.7,0.38,0xffffff);
 
-
-    const atomCenter = createAtom(
-
-        0,
-        0,
-        0,
-
-        0.65
-
-    );
-
-
-    const atom1 = createAtom(
-
-        -1.4,
-        0.8,
-        0,
-
-        0.38
-
-    );
-
-
-    const atom2 = createAtom(
-
-        1.4,
-        0.8,
-        0,
-
-        0.38
-
-    );
-
-
-    const atom3 = createAtom(
-
-        -1.5,
-        -1,
-        0.5,
-
-        0.32
-
-    );
-
-
-    const atom4 = createAtom(
-
-        1.5,
-        -1,
-        -0.5,
-
-        0.32
-
-    );
-
-
-    const atom5 = createAtom(
-
-        0,
-        1.9,
-        0.2,
-
-        0.3
-
-    );
-
-
-
-    /*LIGAÇÕES ENTRE ÁTOMOS */
+/*LIGAÇÕES ENTRE ÁTOMOS */
 
 
     function createBond(
@@ -332,7 +272,7 @@
 
     createBond(atomCenter, atom4);
 
-    createBond(atomCenter, atom5);
+    // ALTERADO: removida a quinta ligação; o metano possui quatro hidrogênios.
 
 
 
