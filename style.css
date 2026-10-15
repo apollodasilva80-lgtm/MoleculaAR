@@ -862,6 +862,18 @@ p {
     }
 }
 
+/* DUA */
+
+img.dua-image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+}
+
+p span {
+    font-weight: bold;
+    color: var(--blue-light);
+}
 
 /* ACESSIBILIDADE */
 
