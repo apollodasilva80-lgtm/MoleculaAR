@@ -431,3 +431,57 @@ window.addEventListener(
         }
 
     );
+
+/* Código que gera os cards de testers automaticamente a partir do JSON */
+
+
+async function carregarTesters() {
+    const container = document.getElementById("testers-container");
+
+    if (!container) return;
+
+    try {
+        const resposta = await fetch("data/testers.json");
+
+        if (!resposta.ok) {
+            throw new Error("Não foi possível carregar os testers.");
+        }
+
+        const testers = await resposta.json();
+
+        testers.forEach((tester) => {
+            // Cria o card
+            const coluna = document.createElement("div");
+            coluna.className = "col-md-6 col-lg-4";
+
+            const card = document.createElement("div");
+            card.className = "tester-card";
+
+            // Cria a área da foto
+            const fotoContainer = document.createElement("div");
+            fotoContainer.className = "tester-photo";
+
+            const foto = document.createElement("img");
+            foto.src = tester.foto;
+            foto.alt = `Foto de ${tester.nome}`;
+            foto.loading = "lazy";
+
+            // Cria o nome
+            const nome = document.createElement("h3");
+            nome.className = "tester-name";
+            nome.textContent = tester.nome;
+
+            // Monta a estrutura do card
+            fotoContainer.appendChild(foto);
+            card.append(fotoContainer, nome);
+            coluna.appendChild(card);
+            container.appendChild(coluna);
+        });
+
+    } catch (erro) {
+        console.error("Erro ao carregar os testers:", erro);
+        container.textContent = "Não foi possível carregar os testers.";
+    }
+}
+
+carregarTesters();
