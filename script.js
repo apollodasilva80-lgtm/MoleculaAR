@@ -485,3 +485,112 @@ async function carregarTesters() {
 }
 
 carregarTesters();
+
+//código que gera os cards de membros PELO JSON
+
+async function carregarMembros() {
+    const container = document.getElementById("membros-container");
+
+    if (!container) return;
+
+    try {
+        const resposta = await fetch("data/membros.json");
+
+        if (!resposta.ok) {
+            throw new Error("Não foi possível carregar os membros.");
+        }
+
+        const membros = await resposta.json();
+
+        membros.forEach((membro) => {
+            const coluna = document.createElement("div");
+            coluna.className = "col-md-6 col-lg-4";
+
+            const card = document.createElement("div");
+            card.className = "team-card";
+
+            const fotoContainer = document.createElement("div");
+            fotoContainer.className = "member-photo";
+
+            const foto = document.createElement("img");
+            foto.src = membro.foto;
+            foto.alt = `Foto de ${membro.nome}`;
+            foto.loading = "lazy";
+
+            fotoContainer.appendChild(foto);
+
+            const info = document.createElement("div");
+            info.className = "member-info";
+
+            const nome = document.createElement("h3");
+            nome.textContent = membro.nome;
+
+            const funcao = document.createElement("span");
+            funcao.className = "member-role";
+            funcao.textContent = membro.funcao;
+
+            const descricao = document.createElement("p");
+            descricao.textContent = membro.descricao;
+
+            const redes = document.createElement("div");
+            redes.className = "member-social";
+
+            if (membro.github) {
+                const github = document.createElement("a");
+                github.href = membro.github;
+                github.target = "_blank";
+                github.rel = "noopener noreferrer";
+                github.setAttribute("aria-label", `GitHub de ${membro.nome}`);
+
+                const iconeGithub = document.createElement("i");
+                iconeGithub.className = "bi bi-github";
+
+                github.appendChild(iconeGithub);
+                redes.appendChild(github);
+            }
+
+            if (membro.linkedin) {
+                const linkedin = document.createElement("a");
+                linkedin.href = membro.linkedin;
+                linkedin.target = "_blank";
+                linkedin.rel = "noopener noreferrer";
+                linkedin.setAttribute("aria-label", `LinkedIn de ${membro.nome}`);
+
+                const iconeLinkedin = document.createElement("i");
+                iconeLinkedin.className = "bi bi-linkedin";
+
+                linkedin.appendChild(iconeLinkedin);
+                redes.appendChild(linkedin);
+            }
+
+            if (membro.lattes) {
+                const lattes = document.createElement("a");
+                lattes.href = membro.lattes;
+                lattes.target = "_blank";
+                lattes.rel = "noopener noreferrer";
+                lattes.setAttribute("aria-label", `Currículo Lattes de ${membro.nome}`);
+
+                const iconeLattes = document.createElement("i");
+                iconeLattes.className = "bi bi-file-earmark-person";
+
+                lattes.appendChild(iconeLattes);
+                redes.appendChild(lattes);
+            }
+
+            info.append(nome, funcao, descricao, redes);
+            card.append(fotoContainer, info);
+            coluna.appendChild(card);
+            container.appendChild(coluna);
+        });
+
+
+
+    } catch (erro) {
+        console.error("Erro ao carregar os membros:", erro);
+        container.textContent = "Não foi possível carregar os membros.";
+    }
+}
+
+carregarMembros();
+
+

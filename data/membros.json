@@ -1,0 +1,36 @@
+
+[
+    {
+        "nome": "Apollo Emanuel",
+        "foto": "img/membros/FotoApollo.jpeg",
+        "funcao": "Desenvolvedor",
+        "descricao": "Desenvolvedor Web Front-end e Back-end, responsável por criar e manter o site do projeto",
+        "github": "https://github.com/apollodasilva80-lgtm",
+        "linkedin": ""
+    },
+    {
+        "nome": "Kauã Cabral",
+        "foto": "img/membros/FotoKauã.jpeg",
+        "funcao": "Desenvolvedor",
+        "descricao": "Desenvolvedor Web Front-end e Back-end, responsável por criar e manter o site do projeto",
+        "github": "https://kauacabral-dev.github.io/meu-portifolio/",
+        "linkedin": ""
+    },
+    {
+       "nome": "Ryan Marcelino",
+        "foto": "img/membros/FotoRyan.jpeg",
+        "funcao": "Desenvolvedor Back-end",
+        "descricao": "Desenvolvedor Back-end, responsável por desenvolver o software do projeto",
+        "github": "https://github.com/RyanMGF",
+        "linkedin": "https://www.linkedin.com/in/ryan-marcelino-04b57622a/" 
+    },
+    {
+        "nome": "Rodiney Marcelo",
+        "foto": "img/membros/FotoRodiney.jpeg",
+        "funcao": "Monitor do projeto",
+        "descricao": "Monitor do projeto, responsável por orientar e auxiliar o professor responsavel pelo projeto",
+        "github": "",
+        "linkedin": "",
+        "lattes": "http://lattes.cnpq.br/5342932489671373"
+    }
+]
