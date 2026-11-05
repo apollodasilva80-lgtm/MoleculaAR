@@ -12,7 +12,7 @@
         "nome": "Rodiney Marcelo",
         "foto": "img/membros/FotoRodiney.jpeg",
         "funcao": "Monitor do projeto",
-        "descricao": "Monitor do projeto, responsável por orientar e auxiliar o professor responsavel pelo projeto",
+        "descricao": "Supervisor do projeto, responsável por orientar e auxiliar o professor responsavel pelo projeto",
         "github": "",
         "linkedin": "",
         "lattes": "http://lattes.cnpq.br/5342932489671373"
@@ -39,6 +39,38 @@
         "funcao": "Desenvolvedor",
         "descricao": "Desenvolvedor Web Front-end e Back-end, responsável por criar e manter o site do projeto",
         "github": "https://kauacabral-dev.github.io/meu-portifolio/",
+        "linkedin": ""
+    },
+    {
+        "nome": "Isaac Ferreira",
+        "foto": "img/membros/FotoIsaac.jpeg",
+        "funcao": "Desenvolvedor",
+        "descricao": "",
+        "github": "https://github.com/FerrXzz",
+        "linkedin": ""
+    },
+    {
+        "nome": "Ketilly Policarpo",
+        "foto": "img/membros/FotoKetilly.jpeg",
+        "funcao": "Desenvolvedora",
+        "descricao": "",
+        "github": "https://github.com/ketillypolicarpo",
+        "linkedin": ""
+    },
+    {
+        "nome": "Isabella Candido",
+        "foto": "img/membros/FotoIsabella.jpeg",
+        "funcao": "Desenvolvedora",
+        "descricao": "",
+        "github": "https://github.com/isabellamariacandido-lab",
+        "linkedin": ""
+    },
+    {
+        "nome": "Mickaell",
+        "foto": "img/membros/FotoMickaell.jpeg",
+        "funcao": "Desenvolvedor",
+        "descricao": "",
+        "github": "https://github.com/Myckaell26",
         "linkedin": ""
     }
 ]
