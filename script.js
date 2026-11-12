@@ -166,9 +166,9 @@
 
     }
 
+/* ÁTOMOS */
 
 
-    /* ÁTOMOS */
 // ALTERADO: molécula de metano (CH₄) — carbono central + quatro hidrogênios.
 const atomCenter = createAtom(0,0,0,0.65,0xC65D00);// atomo central
 const atom1 = createAtom(-1.15,0.75,0,0.38,0x00ffff);//atomos secundarios
@@ -274,10 +274,7 @@ const atom4 = createAtom(0.85,-0.8,-0.7,0.38,0x00ffff);
 
     // ALTERADO: removida a quinta ligação; o metano possui quatro hidrogênios.
 
-
-
     /*ANIMAÇÃO */
-
 
     function animate() {
 
@@ -299,13 +296,9 @@ const atom4 = createAtom(0.85,-0.8,-0.7,0.38,0x00ffff);
 
     }
 
-
     animate();
 
-
-
     /* RESPONSIVIDADE */
-
 
     window.addEventListener(
 
