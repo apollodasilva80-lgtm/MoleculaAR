@@ -180,6 +180,12 @@ p {
     box-shadow: none;
 }
 
+.navbar-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
 
 /* HERO */
 
